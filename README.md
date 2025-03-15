@@ -67,9 +67,10 @@ Running the Application
 ![Screenshot 2025-03-15 at 03 08 11](https://github.com/user-attachments/assets/d00d90dd-bf58-43bd-ab76-67447aedf797)
 ![Screenshot 2025-03-15 at 03 13 36](https://github.com/user-attachments/assets/7b6fa7a5-0c74-4022-ace0-b5d9b5c0af71)
 
-**To monitor your financial health, run**:
-    ```bash
-     node index.js
+- **Monitor Your Financial Health**:
+   To monitor your financial health, run:
+   ```bash
+   node index.js
     ```
 
 2. **Access the Application**:
