@@ -4,7 +4,7 @@
 
 ### Explanation of the Solution
 
-The Financial Health App provides a comprehensive solution for monitoring and managing personal finances. Integrating with the Investec API allows users to authenticate securely, fetch account details, and monitor transactions. The app alerts users when spending exceeds predefined budget limits, helping them maintain financial discipline.
+The Financial Budget Monitor provides a comprehensive solution for monitoring and managing personal finances. Integrating with the Investec API allows users to authenticate securely, fetch account details, and monitor transactions. The app alerts users when spending exceeds predefined budget limits, helping them maintain financial discipline.
 
 ## Features
 
@@ -25,7 +25,6 @@ The app uses OAuth2 for authentication, ensuring secure access to the Investec A
 3. **Monitoring Spending**: The `monitorSpending.js` file monitors transactions for each account. It calculates total spending and compares it against a predefined budget limit. If the spending exceeds the limit, it logs an alert and provides details of the top transactions.
 
 4. **Server Setup**: The `server.js` file sets up an Express server to serve static files and provide API endpoints for fetching client details. When you run `node server.js`, it first loads all the necessary data in the terminal and then displays it afterward, ensuring that the server is ready to handle incoming requests.
-![Screenshot 2025-03-15 at 01 12 50](https://github.com/user-attachments/assets/81af913d-a801-4c0e-a1e0-5b61abc05532)
 
 5. **Monitor Your Financial Health**: A new section is added under "Running the Application" to instruct users to run `node index.js` to monitor their financial health.
 
@@ -40,8 +39,8 @@ The app uses OAuth2 for authentication, ensuring secure access to the Investec A
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
-   cd financial-health-app
+   git clone https://github.com/thandhla/Financial-Budget-Monitor.git
+   cd Financial-Budget-Monitor
 
 2. **Install Dependencies**:
     ```bash
@@ -67,18 +66,19 @@ Running the Application
 ![Screenshot 2025-03-15 at 03 08 11](https://github.com/user-attachments/assets/d00d90dd-bf58-43bd-ab76-67447aedf797)
 ![Screenshot 2025-03-15 at 03 13 36](https://github.com/user-attachments/assets/7b6fa7a5-0c74-4022-ace0-b5d9b5c0af71)
 
-- **Monitor Your Financial Health**:
-   To monitor your financial health, run:
+- **Monitor Your Financial Budget**:
+   To monitor your financial budget, run:
    ```bash
    node index.js
     ```
+   ![Screenshot 2025-03-15 at 01 12 50](https://github.com/user-attachments/assets/81af913d-a801-4c0e-a1e0-5b61abc05532)
 
 2. **Access the Application**:
    Open your web browser and navigate to http://localhost:5000.
 
 ### Using Postman
 - Postman Collection :
-  - Click the Postman link in the application to open the sandbox specifically created for this environment.
+  - Click the Postman link in the webview to open the sandbox specifically created for this environment.
   - Select the environment named "PB Sandbox[hwjwdhwevdwed]" - am using openaisandbox to set up the variables used throughout the collections.
 
 #### Verify Setup
