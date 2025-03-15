@@ -64,10 +64,22 @@ Running the Application
     ```bash
     node server.js
     ```
+
 **To monitor your financial budget, run**:
     ```bash
      node index.js
     ```
+
+![Screenshot 2025-03-15 at 03 08 11](https://github.com/user-attachments/assets/d00d90dd-bf58-43bd-ab76-67447aedf797)
+![Screenshot 2025-03-15 at 03 13 36](https://github.com/user-attachments/assets/7b6fa7a5-0c74-4022-ace0-b5d9b5c0af71)
+
+- **Monitor Your Financial Budget**:
+   To monitor your financial budget, run:
+   ```bash
+   node index.js
+    ```
+   ![Screenshot 2025-03-15 at 01 12 50](https://github.com/user-attachments/assets/81af913d-a801-4c0e-a1e0-5b61abc05532)
+
 
 2. **Access the Application**:
    Open your web browser and navigate to http://localhost:5000.
