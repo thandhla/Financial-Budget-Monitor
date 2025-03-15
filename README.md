@@ -65,7 +65,7 @@ Running the Application
     node server.js
     ```
 ![Screenshot 2025-03-15 at 03 08 11](https://github.com/user-attachments/assets/d00d90dd-bf58-43bd-ab76-67447aedf797)
-![Screenshot 2025-03-15 at 03 08 40](https://github.com/user-attachments/assets/d5602136-55da-448b-8029-2a2acd21eb02)
+![Screenshot 2025-03-15 at 03 13 36](https://github.com/user-attachments/assets/7b6fa7a5-0c74-4022-ace0-b5d9b5c0af71)
 
 **To monitor your financial health, run**:
     ```bash
