@@ -24,10 +24,9 @@ The app uses OAuth2 for authentication, ensuring secure access to the Investec A
 
 3. **Monitoring Spending**: The `monitorSpending.js` file monitors transactions for each account. It calculates total spending and compares it against a predefined budget limit. If the spending exceeds the limit, it logs an alert and provides details of the top transactions.
 
-4. **Server Setup**: The `server.js` file sets up an Express server to serve static files and provide API endpoints for fetching client details. When you run `node server.js`, it first loads all the necessary data in the terminal and then displays it afterwards, ensuring that the server is ready to handle incoming requests.
-![Budget Monitoring Output](./public/images/Screenshot%202025-03-13%20at%2001.41.13.png)
+4. **Server Setup**: The `server.js` file sets up an Express server to serve static files and provide API endpoints for fetching client details. When you run `node server.js`, it first loads all the necessary data in the terminal and then displays it afterward, ensuring that the server is ready to handle incoming requests.
 
-5. **Monitor Your Financial Budget**: A new section is added under "Running the Application" to instruct users to run `node index.js` for monitoring their financial budget.
+5. **Monitor Your Financial Budget**: A new section is added under "Running the Application" to instruct users to run `node index.js` to monitor their financial budget.
 
 6. **Running the Application**: After starting the server, you can access the application through your web browser at http://localhost:5000.
 
@@ -50,7 +49,7 @@ The app uses OAuth2 for authentication, ensuring secure access to the Investec A
 
 3. **Set Up Environment Variables**:
     Create a `.env` file in the root directory. 
-    Add your Investec API credentials or the neccessary environment variables as shown in the `.env.example` file below:
+    Add your Investec API credentials or the necessary environment variables as shown in the `.env.example` file below:
     ```bash
     CLIENT_ID=<your-client-id>
     CLIENT_SECRET=<your-client-secret>
