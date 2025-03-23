@@ -56,6 +56,41 @@ The app uses OAuth2 for authentication, ensuring secure access to the Investec A
     API_KEY=<your-api-key>
     ACCOUNT_ID=<your-account-id>
     ```
+   
+    If you choose not to use the alert notification feature, the application will still compile and run successfully using the Investec API credentials.
+
+4. **Configure Gmail for Notification**:
+
+   **Step 1: Enable 2-Step Verification**
+   - Visit Google Account settings at https://myaccount.google.com/
+   - Navigate to "Security" in the left menu
+   - Find "Signing in to Google" section
+   - Select "2-Step Verification"
+   - Verify identity with phone
+   - Follow Google's instructions to complete setup
+
+   **Step 2: Generate App Password**
+   - Return to Google Account security settings
+   - Locate "App passwords" under "Signing in to Google"
+   - Click "App passwords" and verify password
+   - Choose "Other (Custom name)" from dropdown
+   - Name it "Budget Monitor App"
+   - Click "Generate"
+   - Copy the 16-character password (only shown once)
+
+   **Step 3: Add the .env file**
+   - Add your Gmail settings to your .env file:
+   ```bash
+   EMAIL_USER=your_email@gmail.com
+   EMAIL_PASS=your_16_character_app_password
+   NOTIFICATION_EMAIL=recipient@example.com
+   ```
+
+   **Step 4: Install Nodemailer**
+   - If you haven't already, install Nodemailer package:
+   ```bash
+   npm install nodemailer
+   ```
 
     If you choose not to use the alert notification feature, the application will still compile and run successfully using the Investec API credentials.
 

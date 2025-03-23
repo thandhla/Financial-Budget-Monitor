@@ -1,0 +1,87 @@
+body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+.container { max-width: 600px; margin: 0 auto; padding: 20px; }
+.header { background: #f0f0f0; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+.header h2 { margin-top: 0; color: #e74c3c; }
+.summary { background: #f9f9f9; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+.account { background: #fff; border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+.account h3 { margin-top: 0; color: #3498db; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+.over-budget { border-left: 5px solid #e74c3c; }
+.approaching-budget { border-left: 5px solid #f39c12; }
+.transactions { margin-top: 10px; }
+.transaction { padding: 8px; border-bottom: 1px solid #eee; }
+.transaction:last-child { border-bottom: none; }
+.amount { font-weight: bold; }
+.over-amount { color: #e74c3c; }
+.footer { text-align: center; margin-top: 20px; font-size: 0.8em; color: #777; }
+.progress-container { height: 20px; background-color: #e0e0e0; border-radius: 10px; margin: 10px 0; }
+.progress-bar { height: 20px; background-color: #3498db; border-radius: 10px; }
+.progress-over { background-color: #e74c3c; }
+.progress-warning { background-color: #f39c12; }
+
+/* Additional styles from emailNotification.js */
+body { 
+  font-family: 'Poppins', sans-serif; 
+  line-height: 1.6; 
+  color: #334155; 
+  background-color: #f8fafc;
+  margin: 0;
+  padding: 0;
+}
+.banner {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  color: white;
+  padding: 24px;
+  margin: -20px -20px 20px -20px;
+  text-align: center;
+}
+.banner h1 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+}
+.banner p {
+  margin: 8px 0 0 0;
+  opacity: 0.9;
+  font-weight: 300;
+}
+.content { 
+  background: #f1f5f9; 
+  padding: 20px; 
+  border-radius: 12px; 
+  margin-bottom: 24px;
+  border-left: 4px solid #3b82f6;
+}
+.config-list {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+  border: 1px solid #e2e8f0;
+}
+.config-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+.config-list li:last-child {
+  border-bottom: none;
+}
+.success-icon {
+  font-size: 48px;
+  text-align: center;
+  margin: 0 0 16px 0;
+}
+.cta-button {
+  display: block;
+  text-align: center;
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  margin: 24px auto;
+  border-radius: 8px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+  max-width: 200px;
+}

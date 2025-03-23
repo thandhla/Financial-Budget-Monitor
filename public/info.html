@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Monitor</title>
+    <link rel="stylesheet" href="./styles.css">
+    <head>
+      <style>
+        .top-right-buttons {
+          position: relative;
+          display: flex;
+          justify-content: flex-end;
+          gap: 15px;
+        }
+        .button-link {
+          display: inline-block;
+          padding: 8px 16px;
+          background-color: #040915;
+          color: white;
+          text-decoration: none;
+          border-radius: 4px;
+          font-size: 0.875rem;
+          font-weight: 600;
+          transition: background-color 0.3s ease;
+        }
+        .button-link:hover {
+          background-color: #1e40af;
+        }
+        .logo {
+          height: 100px; 
+          width: auto;
+          margin-right: auto; 
+        }
+      </style>
+    </head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="max-w-4xl mx-auto p-4 bg-gray-50 rounded-lg shadow">
+      <div class="flex justify-between items-center mb-6">
+        <div class="flex items-center">
+          <img class="logo" src="/images/zebra.png" alt="Zebra Logo">
+        </div>
+        <div class="top-right-buttons">
+          <a href="https://developer.investec.com/za/api-products" target="_blank" class="button-link">Documentation</a>
+          <a href="https://web.postman.co/workspace/My-Workspace~633a8759-c5cf-47f1-8f6b-75a88152ad31/request/29332612-a5543ef8-aaa0-41db-80e6-e9f9767217d8" target="_blank" class="button-link">Postman</a>
+        </div>
+      </div>
+      <header class="mb-6 header">
+        <div class="flex justify-between items-center">
+          <div>
+            <h1 class="text-2xl font-bold text-gray-800">Investec Budget Monitor</h1>
+            <p class="text-gray-600">Track your spending against your monthly budget</p>
+          </div>
+          <div class="bg-white p-3 rounded-lg shadow-sm text-center">
+            <div class="text-sm text-gray-600">Budget Status</div>
+            <div class="text-xl font-bold text-green-600" id="budget-status">Loading...</div>
+          </div>
+        </div>
+
+      <div class="bg-white p-4 rounded-lg shadow-sm mb-6">
+        <h2 class="text-xl font-semibold mb-3">Budget Overview</h2>
+        <div class="flex flex-col space-y-4"> 
+          <div class="flex-1 bg-blue-50 p-4 rounded-lg shadow">
+            <div class="flex justify-between items-center mb-2">
+              <p class="text-sm text-gray-600">Monthly Budget</p>
+              <p class="text-sm text-gray-600" id="monthly-budget">Loading...</p>
+            </div>
+            <div class="flex justify-between items-center mb-2">
+              <p class="text-sm text-gray-600">Total Spent</p>
+              <p class="text-sm font-semibold text-green-600" id="total-spent">Loading...</p>
+            </div>
+            <div class="flex justify-between items-center mb-1">
+              <p class="text-sm text-gray-600">Remaining</p>
+              <p class="text-sm font-semibold text-blue-600" id="remaining">Loading...</p>
+            </div>
+            
+            <div class="mt-3">
+              <div class="progress-bar-container">
+                <div class="progress-bar" id="budget-progress"></div>
+              </div>
+              <div class="flex justify-between mt-1">
+                <span class="text-xs text-gray-600">0%</span>
+                <span class="text-xs text-gray-600" id="budget-used">Loading...</span>
+                <span class="text-xs text-gray-600">100%</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex-1 bg-white p-4 rounded-lg shadow">
+            <p class="text-sm text-gray-600 mb-2">Spending by Account</p>
+            <div class="pie-chart">
+              <canvas id="pie-chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-white p-4 rounded-lg shadow-sm mb-6">
+        <h2 class="text-xl font-semibold mb-3">Account Details</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Account</th>
+                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                <th class="px-4 py-2 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Balance</th>
+                <th class="px-4 py-2 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Spending</th>
+                <th class="px-4 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200" id="account-details"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bg-white p-4 rounded-lg shadow-sm mb-6">
+        <h2 class="text-xl font-semibold mb-3">Top Transactions</h2>
+        <div class="h-64">
+        <canvas id="bar-chart"></canvas>
+        </div>
+      </div>
+
+      <div class="bg-white p-4 rounded-lg shadow-sm">
+        <h2 class="text-xl font-semibold mb-3">Financial Insights</h2>
+        <div class="space-y-3">
+          <div class="p-3 border-l-4 border-blue-500 bg-blue-50 rounded">
+            <p class="text-sm text-gray-700" id="budget-insight">Loading...</p>
+          </div>
+          <div class="p-3 border-l-4 border-yellow-500 bg-yellow-50 rounded">
+            <p class="text-sm text-gray-700" id="sending-pattern">Loading...</p>
+          </div>
+          <div class="p-3 border-l-4 border-green-500 bg-green-50 rounded">
+            <p class="text-sm text-gray-700" id="recommendation">Loading...</p>
+          </div>
+        </div>
+      </div>
+      
+      <footer class="mt-6 text-center text-xs text-gray-500">
+        <p id="data-period">Loading...</p>
+        <p class="mt-1" id="last-updated">Loading...</p>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', async function() {
+        try {
+          const response = await fetch('/monitor-spending');
+          const monitoringData = await response.json();
+
+          document.getElementById('monthly-budget').textContent = `R${monitoringData.budgetLimit.toFixed(2)}`;
+          document.getElementById('total-spent').textContent = `R${monitoringData.totalOverallSpending.toFixed(2)}`;
+          document.getElementById('remaining').textContent = `R${(monitoringData.budgetLimit - monitoringData.totalOverallSpending).toFixed(2)}`;
+
+          const budgetUsagePercentage = (monitoringData.totalOverallSpending / monitoringData.budgetLimit) * 100;
+          document.getElementById('budget-progress').style.width = `${budgetUsagePercentage}%`;
+          document.getElementById('budget-used').textContent = `${budgetUsagePercentage.toFixed(0)}% used`;
+
+          const budgetStatusElement = document.getElementById('budget-status');
+          budgetStatusElement.textContent = monitoringData.overallStatus;
+
+          const totalSpentElement = document.getElementById('total-spent');
+          if (monitoringData.totalOverallSpending > monitoringData.budgetLimit) {
+            totalSpentElement.classList.remove('text-green-600');
+            totalSpentElement.classList.add('text-red-600');
+            budgetStatusElement.classList.remove('text-green-600');
+            budgetStatusElement.classList.add('text-red-600');
+          } else {
+            totalSpentElement.classList.remove('text-red-600');
+            totalSpentElement.classList.add('text-green-600');
+            budgetStatusElement.classList.remove('text-red-600');
+            budgetStatusElement.classList.add('text-green-600');
+          }
+
+          document.getElementById('budget-insight').innerHTML = `<strong>Budget Status:</strong> You've spent ${budgetUsagePercentage.toFixed(2)}% of your monthly budget. You have R${(monitoringData.budgetLimit - monitoringData.totalOverallSpending).toFixed(2)} remaining.`;
+          document.getElementById('recommendation').innerHTML = `<strong>Recommendation:</strong> To enhance your financial health, try setting aside a few minutes each week to review your spending habits and adjust your budget accordingly. This proactive approach can help you achieve your financial goals more effectively.`;
+          document.getElementById('data-period').textContent = `Data period: ${monitoringData.fromDate} to ${monitoringData.toDate}`;
+          document.getElementById('last-updated').textContent = `Last updated: ${monitoringData.timestamp}`;
+          
+          const pieData = monitoringData.accountDetails.map(account => ({
+            name: account.accountName,
+            value: account.totalSpending
+          }));
+          
+          let allTopDebits = [];
+          monitoringData.accountDetails.forEach(account => {
+            if (account.topDebits && account.topDebits.length > 0) {
+              allTopDebits = [...allTopDebits, ...account.topDebits];
+            }
+          });
+          
+          const sortedTransactions = allTopDebits.sort((a, b) => b.amount - a.amount);
+          const largestTransaction = sortedTransactions[0];
+          
+          document.getElementById('sending-pattern').innerHTML = `<strong>Spending Pattern:</strong> Your largest transaction this month is ${largestTransaction.description} for R${largestTransaction.amount.toFixed(2)} on ${largestTransaction.date}.`;
+          
+          const barData = allTopDebits
+            .sort((a, b) => b.amount - a.amount)
+            .slice(0, 5)
+            .map(debit => ({
+              name: debit.description.length > 15 ? debit.description.substring(0, 15) + '...' : debit.description,
+              amount: debit.amount,
+              fullDescription: debit.description,
+              date: debit.date
+            }));
+          
+          const pieCtx = document.getElementById('pie-chart').getContext('2d');
+          new Chart(pieCtx, {
+            type: 'doughnut',
+            data: {
+              labels: pieData.map(d => d.name),
+              datasets: [{
+                data: pieData.map(d => d.value),
+                backgroundColor: ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8']
+              }]
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                tooltip: {
+                  callbacks: {
+                    label: function(context) {
+                      return `R${context.raw.toFixed(2)}`;
+                    }
+                  }
+                }
+              }
+            }
+          });
+          
+          const barCtx = document.getElementById('bar-chart').getContext('2d');
+          new Chart(barCtx, {
+            type: 'bar',
+            data: {
+              labels: barData.map(d => d.name),
+              datasets: [{
+                data: barData.map(d => d.amount),
+                backgroundColor: '#0088FE'
+              }]
+            },
+            options: {
+              indexAxis: 'y',
+              responsive: true,
+              plugins: {
+                tooltip: {
+                  callbacks: {
+                    label: function(context) {
+                      return `${context.dataset.label}: R${context.raw.toFixed(2)}`;
+                    }
+                  }
+                }
+              }
+            }
+          });
+          
+          const accountDetailsElement = document.getElementById('account-details');
+          accountDetailsElement.innerHTML = monitoringData.accountDetails.map(account => `
+            <tr>
+              <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">${account.accountName}</td>
+              <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">${account.productName}</td>
+              <td class="px-4 py-3 whitespace-nowrap text-sm text-right">R${account.currentBalance.toFixed(2)}</td>
+              <td class="px-4 py-3 whitespace-nowrap text-sm text-right font-medium">R${account.totalSpending.toFixed(2)}</td>
+              <td class="px-4 py-3 whitespace-nowrap text-sm text-center">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">${account.status}</span>
+              </td>
+            </tr>
+          `).join('');
+        } catch (error) {
+          console.error('Error fetching monitoring data:', error);
+        }
+      });
+    </script>
+  </body>
+</html>
