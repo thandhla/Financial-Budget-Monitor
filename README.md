@@ -93,7 +93,7 @@ The app uses OAuth2 for authentication, ensuring secure access to the Investec A
    ```bash
    npm install nodemailer
    ```
-   <img width="1122" alt="Screenshot 2025-03-23 at 14 37 00" src="https://github.com/user-attachments/assets/e95268bd-3afd-49da-a0e4-16c3eb06d815" />
+<img width="1122" alt="Screenshot 2025-03-23 at 14 37 00" src="https://github.com/user-attachments/assets/136d223c-af77-41bf-aded-339eaa3cd80f" />
 
 
 Running the Application
@@ -103,17 +103,17 @@ Running the Application
     node server.js
     ```
 
-![Screenshot 2025-03-23 at 14 24 22](https://github.com/user-attachments/assets/6515cbf2-6961-4bd0-96b9-b473730398a5)
+![Screenshot 2025-03-23 at 14 24 22](https://github.com/user-attachments/assets/8a7c2598-b559-4a59-8c51-7104abaeda9f)
 
-![Screenshot 2025-03-23 at 14 55 32](https://github.com/user-attachments/assets/b30acf5a-09a7-4f94-8dbb-93402e454d91)
-![Screenshot 2025-03-23 at 14 55 57](https://github.com/user-attachments/assets/643935b5-63ed-468f-8e51-8e0d62f9917a)
+![Screenshot 2025-03-23 at 14 55 32](https://github.com/user-attachments/assets/ed455e3a-b937-497c-a810-82c7051a74a9)
+![Screenshot 2025-03-23 at 14 55 57](https://github.com/user-attachments/assets/913c3c0d-6026-4e68-a08c-bedd90b449cf)
 
 - **Monitor Your Financial Budget**:
    To monitor your financial budget, run:
    ```bash
    node index.js
     ```
-![Screenshot 2025-03-23 at 14 20 57](https://github.com/user-attachments/assets/b0347cd6-730f-4b2b-a7cc-d51e606e5709)
+![Screenshot 2025-03-23 at 14 20 57](https://github.com/user-attachments/assets/779f21dc-ae13-4f95-9e99-3aafabe163c3)
 
 
 2. **Access the Application**:
