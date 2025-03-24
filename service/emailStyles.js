@@ -16,6 +16,6 @@ module.exports = `
   .footer { text-align: center; margin-top: 20px; font-size: 0.8em; color: #777; }
   .progress-container { height: 20px; background-color: #e0e0e0; border-radius: 10px; margin: 10px 0; }
   .progress-bar { height: 20px; background-color: #3498db; border-radius: 10px; }
-  .progress-over { background-color: #e74c3c; }
+  .progress-over { background-color:rgb(231, 33, 11); }
   .progress-warning { background-color: #f39c12; }
 `;
