@@ -89,7 +89,7 @@ The app uses OAuth2 for authentication, ensuring secure access to the Investec A
    EMAIL_PORT=587
    EMAIL_USER=your_email@gmail.com
    EMAIL_PASS=your_16_character_app_password
-   NOTIFICATION_EMAIL=recipient@example.com
+   NOTIFICATION_EMAIL=your_recipient@example.com
    ```
 
    **Step 4: Install Nodemailer**
