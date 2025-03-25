@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require('path');
-const monitorSpending = require('./controllers/monitorSpending'); 
+const monitorSpending = require('./monitorSpending');
 const getAccounts = require('./controllers/getAccounts'); 
 
 const app = express();

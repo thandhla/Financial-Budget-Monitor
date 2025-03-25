@@ -1,5 +1,5 @@
 const authenticate = require('./config/auth');
-const { getAccounts } = require('./getAccounts');
+const { getAccounts } = require('./controllers/getAccounts');
 const monitorSpending = require('./monitorSpending');
 require('dotenv').config();
 

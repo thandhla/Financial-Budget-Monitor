@@ -1,7 +1,7 @@
 const axios = require('axios');
-const authenticate = require('../config/auth'); 
-const { getAccounts, getAccountBalance } = require('./getAccounts');
-const {sendBudgetAlert} = require('./emailNotification');
+const authenticate = require('./config/auth'); 
+const { getAccounts, getAccountBalance } = require('./controllers/getAccounts');
+const {sendBudgetAlert} = require('./controllers/emailNotification');
 require('dotenv').config();
 
 const apiKey = process.env.API_KEY;

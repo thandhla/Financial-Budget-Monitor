@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> d6e79eb (Fetch account details, monitor transactions and send alert notification when spending exceeds)
 # Logs
 logs
 *.log
@@ -139,3 +135,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 .qodo
+.env
