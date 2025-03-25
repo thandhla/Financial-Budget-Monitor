@@ -18,7 +18,6 @@ body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
 .progress-over { background-color: #f11e07; }
 .progress-warning { background-color: #f39c12; }
 
-/* Additional styles from emailNotification.js */
 body { 
   font-family: 'Poppins', sans-serif; 
   line-height: 1.6; 

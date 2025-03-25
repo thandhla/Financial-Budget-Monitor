@@ -120,7 +120,6 @@ async function monitorSpending() {
         continue;
       }
 
-      // Remove the second declaration of totalSpending
       const debits = [];
 
       transactions.forEach(transaction => {

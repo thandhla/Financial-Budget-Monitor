@@ -16,7 +16,7 @@
         .button-link {
           display: inline-block;
           padding: 8px 16px;
-          background-color: #e67e22; /* Changed from dark blue to warm orange */
+          background-color: #e67e22;
           color: white;
           text-decoration: none;
           border-radius: 4px;
@@ -25,30 +25,27 @@
           transition: background-color 0.3s ease;
         }
         .button-link:hover {
-          background-color: #d35400; /* Darker orange on hover */
+          background-color: #d35400;
         }
+
         .logo {
           height: 100px; 
           width: auto;
           margin-right: auto; 
         }
         
-        /* Add warm accent colors */
         .progress-bar {
-          background-color: #2ecc71; /* Changed to a warmer green */
+          background-color: #2ecc71; 
         }
         
-        /* When over budget, use this warmer red */
         .text-red-600 {
           color: #e74c3c !important;
         }
         
-        /* Warm background for the main container */
         .max-w-4xl {
-          background-color: #faf5ef !important; /* Warm off-white background */
+          background-color: #faf5ef !important; 
         }
         
-        /* Warmer blue for insights */
         .border-blue-500 {
           border-color: #3498db !important;
         }
@@ -249,7 +246,7 @@
               labels: pieData.map(d => d.name),
               datasets: [{
                 data: pieData.map(d => d.value),
-                backgroundColor: ['#e67e22', '#2ecc71', '#f1c40f', '#e74c3c', '#9b59b6'] // Warm color palette
+                backgroundColor: ['#e67e22', '#2ecc71', '#f1c40f', '#e74c3c', '#9b59b6'] 
               }]
             },
             options: {
