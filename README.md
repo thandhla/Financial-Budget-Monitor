@@ -28,7 +28,7 @@ The app uses OAuth2 for authentication, ensuring secure access to the Investec A
 
 5. **Monitor Your Financial Budget**: A new section is added under "Running the Application" to instruct users to run `node index.js` to monitor their financial budget.
 
-6. **Running the Application**: After starting the server, you can access the application through your web browser at http://localhost:5000.
+6. **Running the Application**: After starting the server, you can access the application through your web browser at http://localhost:3000.
 
 ## Installation Instructions
 ### Prerequisites
