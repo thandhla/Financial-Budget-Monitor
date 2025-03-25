@@ -60,23 +60,10 @@ app.get('/api/account-details', async (req, res) => {
   }
 });
 
-app.get('/transfers', async (req, res) => {
-  try {
-    const accountId = process.env.ACCOUNT_ID;
-    const transfers = await getMultipleTransfers(accountId);
-    res.json(transfers || []);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch transfers' });
-  }
-});
-
-app.get('/beneficiaries', async (req, res) => {
-  try {
-    const beneficiaries = await getBeneficiaries();
-    res.json(beneficiaries || []);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch beneficiaries' });
-  }
-});
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+(async () => {
+  app.listen(PORT, () => {
+    const url = `http://localhost:${PORT}`;
+    console.log(`Server running on port ${PORT}`);
+    console.log(`You can access the webview at: \x1b[34m${url}\x1b[0m`); 
+  });
+})();
