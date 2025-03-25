@@ -16,7 +16,7 @@
         .button-link {
           display: inline-block;
           padding: 8px 16px;
-          background-color: #040915;
+          background-color: #e67e22; /* Changed from dark blue to warm orange */
           color: white;
           text-decoration: none;
           border-radius: 4px;
@@ -25,12 +25,42 @@
           transition: background-color 0.3s ease;
         }
         .button-link:hover {
-          background-color: #1e40af;
+          background-color: #d35400; /* Darker orange on hover */
         }
         .logo {
           height: 100px; 
           width: auto;
           margin-right: auto; 
+        }
+        
+        /* Add warm accent colors */
+        .progress-bar {
+          background-color: #2ecc71; /* Changed to a warmer green */
+        }
+        
+        /* When over budget, use this warmer red */
+        .text-red-600 {
+          color: #e74c3c !important;
+        }
+        
+        /* Warm background for the main container */
+        .max-w-4xl {
+          background-color: #faf5ef !important; /* Warm off-white background */
+        }
+        
+        /* Warmer blue for insights */
+        .border-blue-500 {
+          border-color: #3498db !important;
+        }
+        .bg-blue-50 {
+          background-color: #ebf5fb !important;
+        }
+        
+        footer {
+          color: white;
+          text-align: center;
+          padding: 10px 0;
+          border-radius: 4px;
         }
       </style>
     </head>
@@ -43,7 +73,6 @@
           <img class="logo" src="/images/zebra.png" alt="Zebra Logo">
         </div>
         <div class="top-right-buttons">
-          <a href="https://developer.investec.com/za/api-products" target="_blank" class="button-link">Documentation</a>
           <a href="https://web.postman.co/workspace/My-Workspace~633a8759-c5cf-47f1-8f6b-75a88152ad31/request/29332612-a5543ef8-aaa0-41db-80e6-e9f9767217d8" target="_blank" class="button-link">Postman</a>
         </div>
       </div>
@@ -134,13 +163,17 @@
           <div class="p-3 border-l-4 border-green-500 bg-green-50 rounded">
             <p class="text-sm text-gray-700" id="recommendation">Loading...</p>
           </div>
+          <div class="mt-6 text-center text-xs text-gray-500">
+            <p id="data-period">Loading...</p>
+            <p class="mt-1" id="last-updated">Loading...</p>
+          </div>
         </div>
       </div>
       
-      <footer class="mt-6 text-center text-xs text-gray-500">
-        <p id="data-period">Loading...</p>
-        <p class="mt-1" id="last-updated">Loading...</p>
+      <footer class="mt-6 text-center text-xs text-gray-500">        
+        <p>&copy; 2025 Thandekile | All Rights Reserved</p>
       </footer>
+    </div>
     </div>
 
     <script>
@@ -208,6 +241,7 @@
               date: debit.date
             }));
           
+          // Update chart colors to warmer palette
           const pieCtx = document.getElementById('pie-chart').getContext('2d');
           new Chart(pieCtx, {
             type: 'doughnut',
@@ -215,7 +249,7 @@
               labels: pieData.map(d => d.name),
               datasets: [{
                 data: pieData.map(d => d.value),
-                backgroundColor: ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8']
+                backgroundColor: ['#e67e22', '#2ecc71', '#f1c40f', '#e74c3c', '#9b59b6'] // Warm color palette
               }]
             },
             options: {
@@ -239,7 +273,7 @@
               labels: barData.map(d => d.name),
               datasets: [{
                 data: barData.map(d => d.amount),
-                backgroundColor: '#0088FE'
+                backgroundColor: '#ce8240'
               }]
             },
             options: {

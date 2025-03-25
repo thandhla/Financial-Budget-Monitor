@@ -129,5 +129,7 @@ Running the Application
 
 ## Additional Resources
 - Documentation
+  - [Investec API Documentation](https://developer.investec.com/za/api-products)
+  - [Node.js Documentation](https://nodejs.org/en/docs/)
 
 This guide should help you get started with the project. If you encounter any issues, refer to the documentation or reach out for support.
