@@ -54,7 +54,11 @@ The app uses OAuth2 for authentication, ensuring secure access to the Investec A
     CLIENT_ID=<your-client-id>
     CLIENT_SECRET=<your-client-secret>
     API_KEY=<your-api-key>
-    ACCOUNT_ID=<your-account-id>
+    ACCOUNT_ID=3353431574710163189587446
+    BUDGET_LIMIT=5000
+    TOKEN_EXPIRY=3600 
+    REQUIRE_AUTH=true
+    BUDGET_ALERT_THRESHOLD=0.8
     ```
    
     If you choose not to use the alert notification feature, the application will still compile and run successfully using the Investec API credentials.
@@ -81,6 +85,8 @@ The app uses OAuth2 for authentication, ensuring secure access to the Investec A
    **Step 3: Add the .env file**
    - Add your Gmail settings to your .env file:
    ```bash
+   EMAIL_HOST=smtp.gmail.com
+   EMAIL_PORT=587
    EMAIL_USER=your_email@gmail.com
    EMAIL_PASS=your_16_character_app_password
    NOTIFICATION_EMAIL=recipient@example.com
